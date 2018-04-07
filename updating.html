@@ -1,11 +1,19 @@
 <html class="update">
 	<head>
 		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="progressbar.css">
+		<script src="river.connect.js"></script>
 	</head>
 	<body>
-		<h2>Syncronizing. . .</h3>
+		<img src="logo.png" alt="">
 		<br>
-		<progress id="update_progress" value="0" max="100"></progress>
-		<span style="color:gray;font-size: 11px; font-style: italic;">Please wait</span>
+		<h1>Loading</h1>
+		<br>
+		<br>
+		<div class="progressbar" id="update_progress">
+			<div class="progress"></div>
+		</div>
+		<br>
+		<span style="color:white;font-size: 30px; opacity: 0.5">Please wait</span>
 	</body>
 </html>

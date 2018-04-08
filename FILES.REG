@@ -5,3 +5,8 @@
 :style.css
 :dashboard.html
 imgx:logo.png
+// download aiml files
+:aiml/family.aiml
+:aiml/greetings.aiml
+:aiml/questions.aiml
+:aiml/statements.aiml

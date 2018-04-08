@@ -6,3 +6,15 @@ namespace RiverUpdate{
 	}
 
 }
+
+namespace RiverRemote{
+	
+	export function when(eventName:string,handler:any){
+		let onceHandler = (()=>{
+			handler();
+			removeEventListener(eventName,onceHandler);
+		});
+		addEventListener(eventName,onceHandler);
+	}
+
+}

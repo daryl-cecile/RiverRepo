@@ -1,3 +1,6 @@
+// files in this list will be downloaded on startup
+// format is as follows -> [filetype]:[filename.extension] or imgx:[imagefilename.extension]
+// comment out blank lines
 :river.connect.js
 :style.css
 :dashboard.html

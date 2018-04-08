@@ -15,27 +15,6 @@ body{
 	font-family: sans-serif;
 }
 
-.update body{
-	background: linear-gradient(25deg, rgba(231,77,255,1) 0%, rgba(61,210,255,1) 100%);
-	color:#2D2D2D;
-}
-
-.update h1{
-	font-size: 60px;
-}
-
-.update img{
-	width:40vw;
-	height:40vw;
-	border-radius: 20px;
-}
-
-.center{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-}
 
 div.bar{
 	position: relative;

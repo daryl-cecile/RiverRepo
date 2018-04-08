@@ -104,3 +104,47 @@ button#talk_btn{
 .interactive_btn:focus{
 	outline: none
 }
+
+.msg{
+    margin:15px;
+}
+
+.msg.received {
+    text-align:right;
+}
+
+.received .bubble{
+	background:#607D8B;
+}
+
+.sent .bubble{
+	background: #03A9F4;
+}
+
+.msg.sent{
+    text-align:left;
+}
+
+.bubble{
+	width:auto;
+	display:inline-block;
+	max-width: 80%;
+
+    border-radius: 10px;
+    padding: 5px 12px;
+    padding-top:8px;
+    color:white;
+}
+
+.bubble span:nth-child(1){
+	display:block;
+	font-size:large;
+	word-break:break-word;
+	overflow-wrap: break-word;
+	margin-bottom: 5px;
+}
+
+.bubble span:nth-child(2){
+	opacity: 0.5;
+	font-size:small;
+}

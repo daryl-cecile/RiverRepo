@@ -16,4 +16,27 @@ var RiverRemote;
         addEventListener(eventName, onceHandler);
     }
     RiverRemote.when = when;
+    function scrollConversationBox() {
+        var conversationbox = document.querySelector(".conversation");
+        conversationbox.scrollTop = conversationbox.scrollHeight;
+    }
+    function makeBubble(text, side) {
+        var template = "<div class=\"bubble\">\n          <span>" + text + "</span>\n          <span>" + (side === 'sent' ? 'You' : River.GetApplicationName()) + "</span>\n        </div>";
+        var divMsg = document.createElement('div');
+        divMsg.className = 'msg ' + side;
+        divMsg.innerHTML = template;
+        document.querySelector(".conversation").appendChild(divMsg);
+    }
+    function user_speak(message) {
+        var taskid = River.RegisterTask();
+        River.SpeakRequest(taskid, message);
+        makeBubble(message, "sent");
+        scrollConversationBox();
+    }
+    RiverRemote.user_speak = user_speak;
+    function response_speak(message) {
+        makeBubble(message, "received");
+        scrollConversationBox();
+    }
+    RiverRemote.response_speak = response_speak;
 })(RiverRemote || (RiverRemote = {}));

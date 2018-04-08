@@ -21,7 +21,18 @@
   </div>
   <div class="bar">
   	<div class="conversation">
-  		
+      <div class="msg sent">
+        <div class="bubble">
+          <span>Hi What is the weather like today?</span>
+          <span>You</span>
+        </div>
+      </div>
+  		<div class="msg received">
+        <div class="bubble">
+          <span>It is sunny today</span>
+          <span>Mavis</span>
+        </div>
+      </div>
   	</div>
   </div>
   <div class="bar">
@@ -29,5 +40,11 @@
         <img src="mic.png" style="width:50%" alt="">  
       </button>
   </div>
+
+  <script>
+    document.querySelector("#talk_btn").addEventListener("click",()=>{
+      RiverRemote.user_speak("Hello World");
+    });
+  </script>
 </body>
 </html>

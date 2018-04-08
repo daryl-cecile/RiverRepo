@@ -32,29 +32,9 @@
   </div>
 
   <script>
-    var listening = false;
     document.querySelector("#talk_btn").addEventListener("click",()=>{
-      var recognition = new webkitSpeechRecognition();
-      recognition.lang = "en";
-      recognition.onresult = function (event) {
-          for (var i = event.resultIndex; i < event.results.length; ++i) {
-              if (event.results[i].isFinal) {
-                  RiverRemote.user_speak(event.results[i][0].transcript);
-              }
-          }
-      };
+      RiverRemote.user_speak("Talking");
     });
-
-    function toggleListen(){
-      listening = !listening;
-      if (listening){
-        recognition.start();
-        River.ShowToast("Listening...");
-      }
-      else{
-        recognition.stop();
-      }
-    }
   </script>
 </body>
 </html>

@@ -3,6 +3,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script src="river.connect.js"></script>
+  <meta http-equiv='Content-Language' content='en'/>
 </head>
 <body>
   <div class="bar">
@@ -21,18 +22,7 @@
   </div>
   <div class="bar">
   	<div class="conversation">
-      <div class="msg sent">
-        <div class="bubble">
-          <span>Hi What is the weather like today?</span>
-          <span>You</span>
-        </div>
-      </div>
-  		<div class="msg received">
-        <div class="bubble">
-          <span>It is sunny today</span>
-          <span>Mavis</span>
-        </div>
-      </div>
+      
   	</div>
   </div>
   <div class="bar">
@@ -42,9 +32,29 @@
   </div>
 
   <script>
+    var listening = false;
     document.querySelector("#talk_btn").addEventListener("click",()=>{
-      RiverRemote.user_speak("Hello World");
+      var recognition = new webkitSpeechRecognition();
+      recognition.lang = "en";
+      recognition.onresult = function (event) {
+          for (var i = event.resultIndex; i < event.results.length; ++i) {
+              if (event.results[i].isFinal) {
+                  RiverRemote.user_speak(event.results[i][0].transcript);
+              }
+          }
+      };
     });
+
+    function toggleListen(){
+      listening = !listening;
+      if (listening){
+        recognition.start();
+        River.ShowToast("Listening...");
+      }
+      else{
+        recognition.stop();
+      }
+    }
   </script>
 </body>
 </html>

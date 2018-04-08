@@ -10,6 +10,18 @@ namespace RiverUpdate{
 }
 
 namespace RiverRemote{
+
+	export function user_speak(message:string){
+		let taskid = River.RegisterTask();
+		River.SpeakRequest(taskid,message);
+		makeBubble(message,"sent");
+		scrollConversationBox();
+	}
+
+	export function response_speak(message:string){
+		makeBubble(message,"received");
+		scrollConversationBox();
+	}
 	
 	export function when(eventName:string,handler:any){
 		let onceHandler = (()=>{
@@ -33,18 +45,6 @@ namespace RiverRemote{
       divMsg.className = 'msg '+side;
       divMsg.innerHTML = template;
       (<HTMLDivElement>document.querySelector(".conversation")).appendChild(divMsg);
-	}
-
-	export function user_speak(message:string){
-		let taskid = River.RegisterTask();
-		River.SpeakRequest(taskid,message);
-		makeBubble(message,"sent");
-		scrollConversationBox();
-	}
-
-	export function response_speak(message:string){
-		makeBubble(message,"received");
-		scrollConversationBox();
 	}
 
 }

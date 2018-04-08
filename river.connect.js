@@ -8,6 +8,18 @@ var RiverUpdate;
 })(RiverUpdate || (RiverUpdate = {}));
 var RiverRemote;
 (function (RiverRemote) {
+    function user_speak(message) {
+        var taskid = River.RegisterTask();
+        River.SpeakRequest(taskid, message);
+        makeBubble(message, "sent");
+        scrollConversationBox();
+    }
+    RiverRemote.user_speak = user_speak;
+    function response_speak(message) {
+        makeBubble(message, "received");
+        scrollConversationBox();
+    }
+    RiverRemote.response_speak = response_speak;
     function when(eventName, handler) {
         var onceHandler = (function () {
             handler();
@@ -27,16 +39,4 @@ var RiverRemote;
         divMsg.innerHTML = template;
         document.querySelector(".conversation").appendChild(divMsg);
     }
-    function user_speak(message) {
-        var taskid = River.RegisterTask();
-        River.SpeakRequest(taskid, message);
-        makeBubble(message, "sent");
-        scrollConversationBox();
-    }
-    RiverRemote.user_speak = user_speak;
-    function response_speak(message) {
-        makeBubble(message, "received");
-        scrollConversationBox();
-    }
-    RiverRemote.response_speak = response_speak;
 })(RiverRemote || (RiverRemote = {}));

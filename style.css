@@ -31,7 +31,7 @@ div.bar:nth-child(1){
 
 div.bar:nth-child(2){
 	padding: 0 2.5vw;
-	height: calc(100vh - 55vw);
+	height: calc(100vh - 60vw);
 }
 
 div.bar:nth-child(3){
@@ -39,11 +39,11 @@ div.bar:nth-child(3){
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
-	height: 20vw;
+	height: 25vw;
 }
 
 div.conversation{
-	background: gainsboro;
+	background: #CFD8DC;
 	border-radius: 10px;
 	height:100%;
 	width:100%;
@@ -58,13 +58,49 @@ div.option{
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	flex-direction: column;
 
 	border-radius: 10px;
 }
 
+div.option>span{
+	margin-top:6px;
+	margin-bottom:-24px;
+}
+
+div.option:nth-child(1){
+	background:#FFC107;
+}
+div.option:nth-child(2){
+	background:#4CAF50;
+}
+div.option:nth-child(3){
+	background:#E91E63;
+}
+
 button#talk_btn{
-	width: 50px;
-	height: 50px;
+	height: 20vw;
+    width: 20vw;
 	border-radius: 50%;
-	background:dodgerblue;
+	background:#4FC3F7;
+	border: 0px;
+}
+
+.interactive_btn{
+	transform: scale(1);
+	box-shadow: 0 5px 25px -5px dimgray;
+	transition: all .4s;
+}
+
+.interactive_btn:hover{
+	will-change: transform;
+}
+
+.interactive_btn:active{
+	transform: scale(0.8);
+	box-shadow: 0 1px 20px -3px dimgray;
+}
+
+.interactive_btn:focus{
+	outline: none
 }

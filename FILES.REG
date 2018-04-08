@@ -10,3 +10,8 @@ imgx:logo.png
 :aiml/greetings.aiml
 :aiml/questions.aiml
 :aiml/statements.aiml
+// icons
+imgx:mic.png
+imgx:travel.png
+imgx:weather.png
+imgx:call.png

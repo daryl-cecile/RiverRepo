@@ -9,7 +9,7 @@ var RiverUpdate;
 var RiverRemote;
 (function (RiverRemote) {
     function user_speak(message) {
-        var taskid = River.RegisterTask();
+        var taskid = River.RegisterTask("");
         River.SpeakRequest(taskid, message);
         makeBubble(message, "sent");
         scrollConversationBox();

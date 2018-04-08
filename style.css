@@ -48,6 +48,7 @@ div.conversation{
 	height:100%;
 	width:100%;
 	position: relative;
+	overflow-y: scroll;
 }
 
 div.option{

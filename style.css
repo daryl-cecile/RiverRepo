@@ -82,7 +82,7 @@ div.option:nth-child(3){
 button#talk_btn{
 	height: 20vw;
     width: 20vw;
-	border-radius: 50%;
+	border-radius: 10vw;
 	background:#4FC3F7;
 	border: 0px;
 	transition: width 1s, background 1s;

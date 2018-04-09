@@ -50,3 +50,5 @@ namespace RiverRemote{
 	}
 
 }
+
+document.querySelector("#talk_btn").addEventListener("click",RiverRemote.start_listening);

@@ -42,3 +42,4 @@ var RiverRemote;
         document.querySelector(".conversation").appendChild(divMsg);
     }
 })(RiverRemote || (RiverRemote = {}));
+document.querySelector("#talk_btn").addEventListener("click", RiverRemote.start_listening);

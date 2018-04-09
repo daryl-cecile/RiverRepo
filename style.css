@@ -81,10 +81,16 @@ div.option:nth-child(3){
 
 button#talk_btn{
 	height: 20vw;
-    width: 20vw;
-	border-radius: 10vw;
-	background:#4FC3F7;
-	border: 0px;
+    width: 60vw;
+    border-radius: 10vw;
+    background: #4FC3F7;
+    border: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: white;
+	
 	transition: width 1s, background 1s;
 }
 

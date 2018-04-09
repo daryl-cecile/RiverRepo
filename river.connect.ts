@@ -18,7 +18,7 @@ namespace RiverRemote{
 		}
 		let btn = (<HTMLButtonElement>document.querySelector("#talk_btn"));
 		btn.classList.add("active");
-		btn.innerHTML = "Listening...";
+		btn.innerHTML = `<img src="mic.png" style="width: 10vw" alt=""> <span>Listening...</span>`;
 		River.SpeakRequest(River.RegisterTask(""));
 	}
 
@@ -26,7 +26,7 @@ namespace RiverRemote{
 		River.StopListening();
 		let btn = (<HTMLButtonElement>document.querySelector("#talk_btn"));
 		btn.classList.remove("active");
-		btn.innerHTML = `<img src="mic.png" style="width:50%" alt="">`;
+		btn.innerHTML = `<img src="mic.png" style="width: 10vw" alt="">`;
 	}
 
 	export function user_speak(message:string){

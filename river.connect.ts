@@ -12,7 +12,21 @@ namespace RiverUpdate{
 namespace RiverRemote{
 
 	export function start_listening(){
+		if (River.IsListening() == true){
+			stop_listening();
+			return;
+		}
+		let btn = (<HTMLButtonElement>document.querySelector("#talk_btn"));
+		btn.classList.add("active");
+		btn.innerHTML = "Listening...";
 		River.SpeakRequest(River.RegisterTask(""));
+	}
+
+	export function stop_listening(){
+		River.StopListening();
+		let btn = (<HTMLButtonElement>document.querySelector("#talk_btn"));
+		btn.classList.remove("active");
+		btn.innerHTML = `<img src="mic.png" style="width:50%" alt="">`;
 	}
 
 	export function user_speak(message:string){

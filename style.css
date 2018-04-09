@@ -85,6 +85,12 @@ button#talk_btn{
 	border-radius: 50%;
 	background:#4FC3F7;
 	border: 0px;
+	transition: width 1s, background 1s;
+}
+
+button#talk_btn.active{
+	background:#9E9E9E;
+	width: 45vw;
 }
 
 .interactive_btn{

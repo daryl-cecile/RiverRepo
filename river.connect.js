@@ -9,9 +9,23 @@ var RiverUpdate;
 var RiverRemote;
 (function (RiverRemote) {
     function start_listening() {
+        if (River.IsListening() == true) {
+            stop_listening();
+            return;
+        }
+        var btn = document.querySelector("#talk_btn");
+        btn.classList.add("active");
+        btn.innerHTML = "Listening...";
         River.SpeakRequest(River.RegisterTask(""));
     }
     RiverRemote.start_listening = start_listening;
+    function stop_listening() {
+        River.StopListening();
+        var btn = document.querySelector("#talk_btn");
+        btn.classList.remove("active");
+        btn.innerHTML = "<img src=\"mic.png\" style=\"width:50%\" alt=\"\">";
+    }
+    RiverRemote.stop_listening = stop_listening;
     function user_speak(message) {
         makeBubble(message, "sent");
         scrollConversationBox();

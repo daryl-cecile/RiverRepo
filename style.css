@@ -95,7 +95,7 @@ button#talk_btn{
 }
 
 button#talk_btn.active{
-	background:#9E9E9E;
+	background:#1D1D1D;
 	width: 60vw;
 }
 

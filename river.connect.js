@@ -8,9 +8,12 @@ var RiverUpdate;
 })(RiverUpdate || (RiverUpdate = {}));
 var RiverRemote;
 (function (RiverRemote) {
-    function user_speak(message) {
+    function start_listening() {
         River.SpeakRequest(River.RegisterTask(""));
-        //makeBubble(message,"sent");
+    }
+    RiverRemote.start_listening = start_listening;
+    function user_speak(message) {
+        makeBubble(message, "sent");
         scrollConversationBox();
     }
     RiverRemote.user_speak = user_speak;

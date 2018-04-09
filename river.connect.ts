@@ -11,9 +11,12 @@ namespace RiverUpdate{
 
 namespace RiverRemote{
 
-	export function user_speak(message:string){
+	export function start_listening(){
 		River.SpeakRequest(River.RegisterTask(""));
-		//makeBubble(message,"sent");
+	}
+
+	export function user_speak(message:string){
+		makeBubble(message,"sent");
 		scrollConversationBox();
 	}
 

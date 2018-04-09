@@ -15,7 +15,7 @@ var RiverRemote;
         }
         var btn = document.querySelector("#talk_btn");
         btn.classList.add("active");
-        btn.innerHTML = "Listening...";
+        btn.innerHTML = "<img src=\"mic.png\" style=\"width: 10vw\" alt=\"\"> <span>Listening...</span>";
         River.SpeakRequest(River.RegisterTask(""));
     }
     RiverRemote.start_listening = start_listening;
@@ -23,7 +23,7 @@ var RiverRemote;
         River.StopListening();
         var btn = document.querySelector("#talk_btn");
         btn.classList.remove("active");
-        btn.innerHTML = "<img src=\"mic.png\" style=\"width:50%\" alt=\"\">";
+        btn.innerHTML = "<img src=\"mic.png\" style=\"width: 10vw\" alt=\"\">";
     }
     RiverRemote.stop_listening = stop_listening;
     function user_speak(message) {

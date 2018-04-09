@@ -12,9 +12,8 @@ namespace RiverUpdate{
 namespace RiverRemote{
 
 	export function user_speak(message:string){
-		let taskid = River.RegisterTask("");
-		River.SpeakRequest(taskid);
-		makeBubble(message,"sent");
+		River.SpeakRequest(River.RegisterTask(""));
+		//makeBubble(message,"sent");
 		scrollConversationBox();
 	}
 

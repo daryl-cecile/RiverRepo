@@ -64,6 +64,28 @@ div.option{
 	border-radius: 10px;
 }
 
+div.spacer{
+	height:30vw;
+}
+
+.text{
+	font-size: 6vw;
+    font-weight: 300;
+    color:#03A9F4;
+}
+
+.nav_button{
+	width: 12vw;
+	height: 12vw;
+	border:0;
+	border-radius: 50%;
+	background:black;
+}
+
+.nav_button:focus{
+	outline:none;
+}
+
 div.option>span{
 	margin-top:6px;
 	margin-bottom:-24px;
@@ -160,4 +182,8 @@ button#talk_btn.active{
 .bubble span:nth-child(2){
 	opacity: 0.5;
 	font-size:small;
+}
+
+.ignore{
+	pointer-events: none;
 }

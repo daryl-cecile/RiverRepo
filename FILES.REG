@@ -4,6 +4,7 @@
 :river.connect.js
 :style.css
 :dashboard.html
+:makingcall.html
 imgx:logo.png
 // download aiml files
 :aiml/family.aiml
@@ -15,3 +16,4 @@ imgx:mic.png
 imgx:travel.png
 imgx:weather.png
 imgx:call.png
+imgx:back.png
